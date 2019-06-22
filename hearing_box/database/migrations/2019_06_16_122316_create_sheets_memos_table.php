@@ -15,9 +15,11 @@ class CreateSheetsMemosTable extends Migration
     {
         Schema::create('sheets_memos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sheet_id');
+            $table->unsignedInteger('sheet_id');
             $table->text('memo');
             $table->timestamps();
+
+            $table->foreign('sheet_id')->references('id')->on('sheets');
         });
     }
 

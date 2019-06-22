@@ -15,10 +15,13 @@ class CreateSheetsItemsTable extends Migration
     {
         Schema::create('sheets_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sheet_id');
-            $table->integer('item_id');
+            $table->unsignedInteger('sheet_id');
+            $table->unsignedInteger('item_id');
             $table->text('answer');
             $table->timestamps();
+
+            $table->foreign('sheet_id')->references('id')->on('sheets');
+            $table->foreign('item_id')->references('id')->on('items');
         });
     }
 
