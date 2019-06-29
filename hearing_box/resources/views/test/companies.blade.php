@@ -8,12 +8,12 @@
     <body>
         <table>
         <tr><th>ID</th><th>Name</th><th>作成日</th><th>更新日</th>
-        @foreach($items as $item)
+        @foreach($companies as $company)
             <tr>
-                <td>{{$item->id}}</td>
-                <td>{{$item->name}}</td>
-                <td>{{$item->created_at}}</td>
-                <td>{{$item->updated_at}}</td>
+                <td>{{$company->id}}</td>
+                <td>{{$company->name}}</td>
+                <td>{{$company->created_at}}</td>
+                <td>{{$company->updated_at}}</td>
             </tr>
         @endforeach
         </table>
