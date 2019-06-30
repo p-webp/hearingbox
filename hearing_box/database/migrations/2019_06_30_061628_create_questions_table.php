@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSheetsItemsTable extends Migration
+class CreateQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateSheetsItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sheets_items', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('sheet_id');
-            $table->unsignedInteger('item_id');
-            $table->text('answer');
+            $table->text('question');
             $table->timestamps();
-
-            $table->foreign('sheet_id')->references('id')->on('sheets');
-            $table->foreign('item_id')->references('id')->on('items');
         });
     }
 
@@ -32,6 +27,6 @@ class CreateSheetsItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sheets_items');
+        Schema::dropIfExists('questions');
     }
 }

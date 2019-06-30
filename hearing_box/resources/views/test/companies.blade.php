@@ -11,7 +11,7 @@
         @foreach($companies as $company)
             <tr>
                 <td>{{$company->id}}</td>
-                <td>{{$company->name}}</td>
+                <td><a href="/companies/{{$company->id}}">{{$company->name}}</a></td>
                 <td>{{$company->created_at}}</td>
                 <td>{{$company->updated_at}}</td>
             </tr>
