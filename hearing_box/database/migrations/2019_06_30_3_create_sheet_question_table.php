@@ -21,7 +21,7 @@ class CreateSheetQuestionTable extends Migration
                 $table->timestamps();
     
                 $table->foreign('sheet_id')->references('id')->on('sheets');
-                $table->foreign('question_id')->references('id')->on('quesitons');
+                $table->foreign('question_id')->references('id')->on('questions');
             });
     }
 
