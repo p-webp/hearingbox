@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMemosTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateMemosTable extends Migration
      */
     public function up()
     {
-        Schema::create('memos', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('sheet_id');
-            $table->text('memo');
+            $table->text('question');
             $table->timestamps();
-
-            $table->foreign('sheet_id')->references('id')->on('sheets');
         });
     }
 
@@ -30,6 +27,6 @@ class CreateMemosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memos');
+        Schema::dropIfExists('items');
     }
 }

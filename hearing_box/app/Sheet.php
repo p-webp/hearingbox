@@ -8,6 +8,11 @@ class Sheet extends Model
 {
     public function company()
     {
-        return $this->belongsTo(App\Company);
+        return $this->belongsTo('App\Company');
+    }
+
+    public function memos()
+    {
+        return $this->hasMany('App\Memo');
     }
 }

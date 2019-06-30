@@ -19,6 +19,7 @@ class CompaniesController extends Controller
     {
         $company = Company::findOrFail($id);
         $sheets = $company->sheets()->get();
-        return view('test.show',['company' => $company, 'sheets' => $sheets]);
+        $companyName = Company::where('name', '$name')->first();
+        return view('test.show',['company' => $company, 'sheets' => $sheets,'companyName' => $companyName]);
     }
 };
