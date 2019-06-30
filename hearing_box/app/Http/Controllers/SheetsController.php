@@ -14,11 +14,6 @@ class SheetsController extends Controller
     {
         $company = Company::find($id);
         $sheet_id_array = $company->sheets()->select('id')->get();
-        foreach($sheet_id_array as $sheet_id)
-        {
-            $memos = Sheet::find($sheet_id);
-        }
-        dd($memos);
-        return view('test.contents',['company' => $company,'memos' => $memos]);
+        echo $sheet_id_array;
     }
 }
