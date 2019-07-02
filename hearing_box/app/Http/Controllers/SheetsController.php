@@ -12,8 +12,15 @@ class SheetsController extends Controller
 {
     public function contents($id)
     {
-        $company = Company::find($id);
-        $sheet_id_array = $company->sheets()->select('id')->get();
-        echo $sheet_id_array;
+        $company        = Company::find($id);
+        $sheets         = $company->sheets()->get();
+
+        echo $sheets;
+        /*foreach($sheets as $sheet){
+            $sheets_id = $sheet->id;
+            $sheets_a   = Sheet::find($sheets_id);
+            $memos[]  = $sheets_a->memos()->get();
+        }
+        return view('test.contents',['memos' => $memos]);*/
     }
-}
+};
