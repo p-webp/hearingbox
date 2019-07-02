@@ -6,8 +6,8 @@
         body {font-size:16pt; color:#000000;}
     </style>
     <body>
-        @foreach($sheets as $sheet)
-            <p>{{$sheet->id}}</p>
+        @foreach($memos as $memo)
+            <p>{{$memo->content}}</p>
         @endforeach
     </body>
 </html>

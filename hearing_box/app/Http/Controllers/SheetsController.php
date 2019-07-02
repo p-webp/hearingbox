@@ -15,12 +15,12 @@ class SheetsController extends Controller
         $company        = Company::find($id);
         $sheets         = $company->sheets()->get();
 
-        echo $sheets;
-        /*foreach($sheets as $sheet){
+        //echo $sheets;
+        foreach($sheets as $sheet){
             $sheets_id = $sheet->id;
             $sheets_a   = Sheet::find($sheets_id);
             $memos[]  = $sheets_a->memos()->get();
         }
-        return view('test.contents',['memos' => $memos]);*/
+        return view('test.contents',['memos' => $memos]);
     }
 };
