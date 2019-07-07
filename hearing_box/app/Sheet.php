@@ -15,4 +15,9 @@ class Sheet extends Model
     {
         return $this->hasMany('App\Memo');
     }
+
+    public function items()
+    {
+        return $this->belongsToMany('App\Item','sheet_item');
+    }
 }
