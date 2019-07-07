@@ -6,6 +6,7 @@
         body {font-size:16pt; color:#000000;}
     </style>
     <body>
+        <p><a href="/companies">top</a></p>
         <table>
         <tr><th>ID</th><th>Name</th><th>作成日</th><th>更新日</th>
         @foreach($companies as $company)

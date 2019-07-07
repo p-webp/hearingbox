@@ -6,6 +6,7 @@
         body {font-size:16pt; color:#000000;}
     </style>
     <body>
+    <p><a href="/companies">top</a></p>
         <h1>会社名:{{$company->name}}</h1><br>
         <h2>Q&A</h2>
         <!--「回答：」のあとにsheet_itemテーブルのカラム：answerを表示させたい-->

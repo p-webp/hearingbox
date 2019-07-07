@@ -6,6 +6,7 @@
         body {font-size:16pt; color:#000000;}
     </style>
     <body>
+        <p><a href="/companies">top</a></p>
         <h1>{{$company->name}}</h1>
 
         @foreach($sheets as $sheet)
