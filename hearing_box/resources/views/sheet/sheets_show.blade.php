@@ -9,10 +9,12 @@
     <p><a href="/companies">top</a></p>
         <h1>会社名:{{$company->name}}</h1><br>
         <h2>Q&A</h2>
-        <!--「回答：」のあとにsheet_itemテーブルのカラム：answerを表示させたい-->
-        @foreach($items as $item)
+
+         @foreach($items as $item)
             <p>質問：{{$item->question}}</p>
-            <p>回答：???</p>
+            @foreach($item->sheetItems as $sheetItem)
+            <p>回答：{{$sheetItem->answer}}</p>
+            @endforeach
         @endforeach
         <h2>Memo</h2>
         @foreach($memos as $memo)

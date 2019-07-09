@@ -11,7 +11,7 @@ class Item extends Model
         return $this->belongsToMany('App\Sheet','sheet_item');
     }
 
-    public function sheetItem()
+    public function sheetItems()
     {
         return $this->hasMany('App\SheetItem');
     }
