@@ -13,7 +13,9 @@
          @foreach($items as $item)
             <p>質問：{{$item->question}}</p>
             @foreach($item->sheetItems as $sheetItem)
+                @if($sheetItem->sheet_id==$sheets->id)
             <p>回答：{{$sheetItem->answer}}</p>
+                @endif
             @endforeach
         @endforeach
         <h2>Memo</h2>

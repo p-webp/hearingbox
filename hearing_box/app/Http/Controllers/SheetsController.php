@@ -15,8 +15,6 @@ class SheetsController extends Controller
         $memos = $sheets->memos()->get();
         $company = $sheets->company()->first();
         $items = $sheets->items()->get();
-        $answers =$items->sheetItems()->get();
-        dd($answers);
-        return view('sheet.sheets_show',['memos' => $memos, 'company'=>$company, 'items'=>$items]);
+        return view('sheet.sheets_show',['memos' => $memos, 'company'=>$company, 'items'=>$items, 'sheets'=>$sheets]);
     }
 };
