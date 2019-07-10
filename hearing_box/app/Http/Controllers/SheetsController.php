@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Sheet;
+use App\Memo;
+
+
 
 
 class SheetsController extends Controller
@@ -17,4 +20,13 @@ class SheetsController extends Controller
         $items = $sheets->items()->get();
         return view('sheet.sheets_show',['memos' => $memos, 'company'=>$company, 'items'=>$items, 'sheets'=>$sheets]);
     }
+
+    /*public function add(Request $request)
+    {
+        $memo = new Memo;
+        $memo->content ="a";
+        $memo->sheet_id = $request->sheet_id;
+        $memo->save();
+        return redirect("/sheets/{id}");
+    }*/
 };
