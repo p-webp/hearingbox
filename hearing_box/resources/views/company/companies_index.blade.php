@@ -1,12 +1,7 @@
-<html>
-<head>
-    <title>DB Companies</title>
-</head>
-    <style>
-        body {font-size:16pt; color:#000000;}
-    </style>
+@extends('layout')
+
+@section('content')
     <body>
-        <p><a href="/companies">top</a></p>
         <table>
         <tr><th>ID</th><th>Name</th><th>作成日</th><th>更新日</th>
         @foreach($companies as $company)
@@ -18,5 +13,4 @@
             </tr>
         @endforeach
         </table>
-    </body>
-</html>
+ @endsection

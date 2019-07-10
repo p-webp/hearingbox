@@ -1,13 +1,7 @@
-<html>
-<head>
-    <title>Sheet Details</title>
-</head>
-    <style>
-        body {font-size:16pt; color:#000000;}
-    </style>
-    <body>
-    <p><a href="/companies">top</a></p>
-        <h1>会社名:{{$company->name}}</h1><br>
+@extends('layout')
+
+@section('content')
+        <h1>会社名：{{$company->name}}</h1><br>
         <h2>Q&A</h2>
 
          @foreach($items as $item)
@@ -22,7 +16,6 @@
         @foreach($memos as $memo)
             <p>・{{$memo->content}}</p>
         @endforeach
-    </body>
-</html>
+@endsection
 
 

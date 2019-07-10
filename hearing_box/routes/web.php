@@ -14,6 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('companies','CompaniesController@index');
-Route::get('companies/{id}','CompaniesController@show');
-Route::get('sheets/{id}','SheetsController@show');
+Route::get('companies','CompaniesController@index')->name('companies');
+Route::get('companies/{id}','CompaniesController@show')->name('companies.id');
+Route::get('sheets/{id}','SheetsController@show')->name('sheets.id');
