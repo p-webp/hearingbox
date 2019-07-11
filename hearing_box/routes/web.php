@@ -17,4 +17,4 @@ Route::get('/', function () {
 Route::get('companies','CompaniesController@index')->name('companies');
 Route::get('companies/{id}','CompaniesController@show')->name('companies.id');
 Route::get('sheets/{id}','SheetsController@show')->name('sheets.id');
-Route::post('sheets/memo/add','SheetsController@add')->name('memo.add');
+Route::post('sheets/memo/add','MemosController@add')->name('memo.add');

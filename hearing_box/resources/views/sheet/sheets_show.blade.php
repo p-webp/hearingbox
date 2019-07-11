@@ -19,10 +19,10 @@
         <form action="{{route('memo.add')}}" method="POST">
         {{ csrf_field() }}
     <div class="form-group">
-        <textarea class="form-control" id="content" rows="5"></textarea>
+        <textarea class="form-control" name="content" rows="5"></textarea>
         <input type="hidden" name="sheet_id" value="{{$sheets->id}}">
     </div>
-    <button type="submit" class="btn btn-primary" name="add">追加</button>
+    <input type="submit" class="btn btn-primary" name="add" value="追加">
     </form>
 @endsection
 
