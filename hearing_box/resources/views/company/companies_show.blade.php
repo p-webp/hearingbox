@@ -1,10 +1,17 @@
 @extends('layout')
 
 @section('content')
-        <h1>会社名：{{$company->name}}</h1>
+        <body>
+        <h2>{{$company->name}}</h2>
+        <table class="table">
+        <thead class="thead-light">
+        <tr><th style="width=30%">タイトル</th><th style="width=70%">訪問日</th></tr>
         @foreach($sheets as $sheet)
-            <p>シートID：{{$sheet->id}}</p>
-            <p>タイトル：<a href="/sheets/{{$sheet->id}}">{{$sheet->title}}</a></p>
-            <p>訪問日：{{$sheet->visit_date}}</p><br>
+            <tbody>
+                <tr>
+                    <td><a href="/sheets/{{$sheet->id}}">{{$sheet->title}}</a></td>
+                    <td>{{$sheet->visit_date}}</td>
+                </tr>
+            </tbody>
         @endforeach
 @endsection

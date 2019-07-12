@@ -18,3 +18,5 @@ Route::get('companies','CompaniesController@index')->name('companies');
 Route::get('companies/{id}','CompaniesController@show')->name('companies.id');
 Route::get('sheets/{id}','SheetsController@show')->name('sheets.id');
 Route::post('sheets/memo/add','MemosController@add')->name('memo.add');
+Route::get('memo/{id}/edit','MemosController@edit_index')->name('memos.edit.index');
+Route::post('memo/{id}/edit','MemosController@edit_finish')->name('memos.edit.finish');

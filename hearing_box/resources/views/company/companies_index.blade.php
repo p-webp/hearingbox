@@ -2,15 +2,17 @@
 
 @section('content')
     <body>
-        <table>
-        <tr><th>ID</th><th>Name</th><th>作成日</th><th>更新日</th>
+        <table class="table">
+        <thead class="thead-light">
+        <tr><th style="width:10%">ID</th><th style="width:90%">Name</th></tr>
+        </thead>
         @foreach($companies as $company)
+            <tbody>
             <tr>
-                <td>{{$company->id}}</td>
+                <th>{{$company->id}}</th>
                 <td><a href="/companies/{{$company->id}}">{{$company->name}}</a></td>
-                <td>{{$company->created_at}}</td>
-                <td>{{$company->updated_at}}</td>
             </tr>
+            </tbody>
         @endforeach
         </table>
  @endsection

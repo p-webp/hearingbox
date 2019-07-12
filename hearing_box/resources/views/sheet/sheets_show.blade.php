@@ -1,9 +1,8 @@
 @extends('layout')
 
 @section('content')
-        <h1>会社名：{{$company->name}}</h1><br>
-        <h2>Q&A</h2>
-
+        <h2>{{$company->name}}</h2><br>
+        <h3>Q&A</h3>
          @foreach($items as $item)
             <p>質問：{{$item->question}}</p>
             @foreach($item->sheetItems as $sheetItem)
@@ -12,9 +11,11 @@
                 @endif
             @endforeach
         @endforeach
-        <h2>Memo</h2>
+        <br>
+        <h3>Memo</h3>
         @foreach($memos as $memo)
             <p>・{{$memo->content}}</p>
+            <a class="btn btn-primary" href="/memo/{{$memo->id}}/edit" role="button">編集</a>
         @endforeach
         <form action="{{route('memo.add')}}" method="POST">
         {{ csrf_field() }}
