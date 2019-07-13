@@ -14,9 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('companies','CompaniesController@index')->name('companies');
-Route::get('companies/{id}','CompaniesController@show')->name('companies.id');
-Route::get('sheets/{id}','SheetsController@show')->name('sheets.id');
-Route::post('sheets/memo/add','MemosController@add')->name('memo.add');
-Route::get('memo/{id}/edit','MemosController@edit_index')->name('memos.edit.index');
-Route::post('memo/{id}/edit','MemosController@edit_finish')->name('memos.edit.finish');
+Route::get('companies','CompaniesController@index')->name('companies.index');
+Route::get('companies/{id}','CompaniesController@show')->name('companies.show');
+Route::get('sheets/{id}','SheetsController@show')->name('sheets.show');
+Route::get('sheets/{id}/memos/create','MemosController@create')->name('memos.create');
+Route::post('sheets/{id}/memos/create','MemosController@store')->name('memos.store');
+Route::get('memos/{id}/edit','MemosController@edit')->name('memos.edit');
+Route::post('memos/{id}/edit','MemosController@update')->name('memos.update');
+Route::post('memos/{id}/delete','MemosController@delete')->name('memos.delete');

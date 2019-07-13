@@ -11,9 +11,12 @@ class SheetsController extends Controller
     {
         $sheets = Sheet::find($id);
         $memos = $sheets->memos()->get();
+        $memos =collect($memos);
+        $memos =$memos->sortByDesc('created_at');
         $company = $sheets->company()->first();
         $items = $sheets->items()->get();
-        return view('sheet.sheets_show',['memos' => $memos, 'company'=>$company, 'items'=>$items, 'sheets'=>$sheets]);
+        $sheet = $sheets->first();
+        return view('sheets.sheets_show',['sheets'=>$sheets, 'memos' => $memos, 'company'=>$company, 'items'=>$items, 'sheet'=>$sheet]);
     }
 
 };
