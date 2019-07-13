@@ -1,7 +1,16 @@
 @extends('layout')
 
 @section('content')
-        <form action="/sheets/{{$id}}/memos/create" method="POST">
+    @if(count($errors)>0)
+    <div>
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    <form action="/sheets/{{$id}}/memos/create" method="POST">
         {{ csrf_field() }}
     <div class="form-group">
         <p>メモの追加</p>

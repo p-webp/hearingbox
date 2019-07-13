@@ -15,6 +15,10 @@ class MemosController extends Controller
 
     public function store(Request $request)
     {
+        $validate=[
+            'content' => 'filled'
+        ];
+        $this->validate($request,$validate);
         $memo = new Memo;
         $memo->content = $request->content;
         $memo->sheet_id = $request->sheet_id;
@@ -30,6 +34,10 @@ class MemosController extends Controller
 
     public function update(Request $request,$id)
     {
+        $validate=[
+            'content' => 'filled'
+        ];
+        $this->validate($request,$validate);
         $memo = Memo::findOrFail($id);
         $memo->content = $request->content;
         $memo->save();
