@@ -15,8 +15,7 @@ class SheetsController extends Controller
         $memos =$memos->sortByDesc('created_at');
         $company = $sheets->company()->first();
         $items = $sheets->items()->get();
-        $sheet = $sheets->first();
-        return view('sheets.sheets_show',['sheets'=>$sheets, 'memos' => $memos, 'company'=>$company, 'items'=>$items, 'sheet'=>$sheet]);
+        return view('sheets.sheets_show',['sheets'=>$sheets, 'memos' => $memos, 'company'=>$company, 'items'=>$items]);
     }
 
 };

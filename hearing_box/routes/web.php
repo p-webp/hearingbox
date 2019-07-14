@@ -19,6 +19,8 @@ Route::get('companies/{id}','CompaniesController@show')->name('companies.show');
 Route::get('sheets/{id}','SheetsController@show')->name('sheets.show');
 Route::get('sheets/{id}/memos/create','MemosController@create')->name('memos.create');
 Route::post('sheets/{id}/memos/create','MemosController@store')->name('memos.store');
+Route::get('answer/{id}/edit','SheetItemController@edit')->name('answer.edit');
+Route::post('answer/{id}/edit','SheetItemController@update')->name('answer.update');
 Route::get('memos/{id}/edit','MemosController@edit')->name('memos.edit');
 Route::post('memos/{id}/edit','MemosController@update')->name('memos.update');
 Route::post('memos/{id}/delete','MemosController@delete')->name('memos.delete');
