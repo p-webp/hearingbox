@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 Route::get('companies','CompaniesController@index')->name('companies.index');
 Route::get('companies/{id}','CompaniesController@show')->name('companies.show');
+Route::get('setting','CompaniesController@setting')->name('companies.setting');
+
+Route::get('companies/{id}/sheets/create','SheetsController@create')->name('sheets.create');
+Route::post('companies/{id}/sheets/create','SheetsController@store')->name('sheets.store');
+Route::get('sheets/{id}/edit','SheetsController@edit')->name('sheets.edit');
+Route::post('sheets/{id}/edit','SheetsController@update')->name('sheets.update');
 Route::get('sheets/{id}','SheetsController@show')->name('sheets.show');
 Route::get('sheets/{id}/memos/create','MemosController@create')->name('memos.create');
 Route::post('sheets/{id}/memos/create','MemosController@store')->name('memos.store');

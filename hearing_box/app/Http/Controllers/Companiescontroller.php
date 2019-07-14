@@ -19,6 +19,11 @@ class CompaniesController extends Controller
     {
         $company = Company::findOrFail($id);
         $sheets = $company->sheets()->get();
-        return view('companies.companies_show',['company' => $company, 'sheets' => $sheets]);
+        return view('companies.companies_show',['company' => $company, 'sheets' => $sheets, 'id'=>$id]);
+    }
+
+    public function setting()
+    {
+        return view('companies.setting');
     }
 };

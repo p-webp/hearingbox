@@ -18,7 +18,7 @@
                     font-size:20pt;
             }
 
-            .memo{
+            .inline{
                     display:inline;
                 }
         </style>
