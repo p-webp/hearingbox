@@ -22,6 +22,47 @@ class CompaniesController extends Controller
         return view('companies.companies_show',['company' => $company, 'sheets' => $sheets, 'id'=>$id]);
     }
 
+    public function create()
+    {
+        $companies = Company::All();
+        return view('companies.companies_create',['companies'=>$companies]);
+    }
+
+    public function store(Request $request)
+    {
+        $validate=[
+            'name' => 'filled',
+        ];
+        $this->validate($request,$validate);
+        $items = Company::create(['name' => $request->name]);
+        return redirect()->route('companies.index');
+    }
+
+    public function edit($id)
+    {
+        $company = Company::findOrFail($id);
+        return view('companies.name_edit',["company"=>$company]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $validate=[
+            'name' => 'filled',
+        ];
+        $this->validate($request,$validate);
+        $company = Company::findOrFail($id)->updateOrInsert(
+            ['name' => $request->name]
+        );
+        return redirect()->route('companies.index');
+    }
+
+    public function delete($id)
+    {
+        $company = Company::findOrFail($id);
+        $company->delete();
+        return redirect()->route('companies.index',['id'=>$id]);
+    }
+
     public function setting()
     {
         return view('companies.setting');
