@@ -16,7 +16,13 @@ Route::get('/', function () {
 });
 Route::get('companies','CompaniesController@index')->name('companies.index');
 Route::get('companies/{id}','CompaniesController@show')->name('companies.show');
-Route::get('setting','CompaniesController@setting')->name('companies.setting');
+Route::get('setting','CompaniesController@setting')->name('setting');
+Route::get('setting/question','ItemsController@index')->name('question.index');
+Route::get('setting/question/create','ItemsController@create')->name('question.create');
+Route::post('setting/question/create','ItemsController@store')->name('question.store');
+Route::get('question/{id}/edit','ItemsController@edit')->name('question.edit');
+Route::post('question/{id}/edit','ItemsController@update')->name('question.update');
+Route::post('question/{id}/delete','ItemsController@delete')->name('quesiton.delete');
 
 Route::get('companies/{id}/sheets/create','SheetsController@create')->name('sheets.create');
 Route::post('companies/{id}/sheets/create','SheetsController@store')->name('sheets.store');

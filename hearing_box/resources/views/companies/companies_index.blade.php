@@ -15,5 +15,5 @@
             </tbody>
         @endforeach
         </table>
-        <a href={{route('companies.setting')}}>設定</a>
+        <a href={{route('setting')}}>設定</a>
  @endsection
