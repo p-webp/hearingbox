@@ -18,6 +18,7 @@
         <textarea class="form-control" name="title" rows="1"></textarea>
         <a>訪問日</a>
         <textarea class="form-control" name="visit_date" rows="1"></textarea>
+        <input type="date" name="company_id" value="{{$id}}">
         <a>形式：Y-m-d</a>
         <input type="hidden" name="company_id" value="{{$id}}">
     </div>

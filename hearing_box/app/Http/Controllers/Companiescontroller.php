@@ -9,6 +9,11 @@ use App\Company;
 
 class CompaniesController extends Controller
 {
+    public function link()
+    {
+        return view('about');
+    }
+
     public function index()
     {
         $companies = Company::All();
@@ -34,14 +39,14 @@ class CompaniesController extends Controller
             'name' => 'filled',
         ];
         $this->validate($request,$validate);
-        $items = Company::create(['name' => $request->name]);
+        $company = Company::create(['name' => $request->name]);
         return redirect()->route('companies.index');
     }
 
     public function edit($id)
     {
         $company = Company::findOrFail($id);
-        return view('companies.name_edit',["company"=>$company]);
+        return view('companies.name_edit',['company'=>$company]);
     }
 
     public function update(Request $request,$id)
@@ -50,10 +55,10 @@ class CompaniesController extends Controller
             'name' => 'filled',
         ];
         $this->validate($request,$validate);
-        $company = Company::findOrFail($id)->updateOrInsert(
+        $company = Company::findOrFail($id)->update(
             ['name' => $request->name]
         );
-        return redirect()->route('companies.index');
+        return redirect()->route('companies.show',['id'=>$id]);
     }
 
     public function delete($id)

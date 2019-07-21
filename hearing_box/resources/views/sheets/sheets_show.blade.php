@@ -10,6 +10,7 @@
         <div class="q_a h3">Q&A</div>
          @foreach($items as $item)
             <p>{{$item->question}}</p>
+            <a class="btn btn-primary btn-sm" href="/sheets/{{$sheets->id}}/question/{{$item->id}}/answer/create" role="button">回答の追加</a>
             @foreach($item->sheetItems as $sheetItem)
                 @if($sheetItem->sheet_id==$sheets->id)
             <p>{{$sheetItem->answer}}</p>

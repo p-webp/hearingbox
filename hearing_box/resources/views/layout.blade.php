@@ -9,23 +9,38 @@
         <title>HearingBox</title>
         <style>
             body{
-                    font-size:16pt;
-                    color:#000000;
-                    padding-top:80px;
+                font-size:16pt;
+                color:#000000;
+                padding-top:80px;
                 }
 
             .h3{
-                    font-size:20pt;
+                font-size:20pt;
             }
 
             .inline{
-                    display:inline;
+                display:inline;
                 }
+
+            .brand-text{
+                font-size:30px;
+            }
+            .nav-link{
+
+            }
         </style>
     </head>
     <body>
         <nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
-            <a class='navbar-brand' href={{route('companies.index')}}>HearingBox</a>
+            <a class='navbar-brand brand-text' href="{{route('companies.index')}}">HearingBox</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link inline" href="{{route('about.link')}}">about</a>
+                        <a class="nav-link inline" href="{{route('setting')}}">設定</a>
+                    </li>
+                 </ul>
+            </div>
         </nav>
         <div class='container'>
             @yield('content')
