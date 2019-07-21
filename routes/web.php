@@ -34,9 +34,9 @@ Route::get('/question/{id}/edit','ItemsController@edit')->name('question.edit');
 Route::post('/question/{id}/edit','ItemsController@update')->name('question.update');
 Route::post('/question/{id}/delete','ItemsController@delete')->name('quesiton.delete');
 
+Route::get('/sheets/{id}','SheetsController@show')->name('sheets.show');
 Route::get('/companies/{id}/sheets/create','SheetsController@create')->name('sheets.create');
 Route::post('/companies/{id}/sheets/create','SheetsController@store')->name('sheets.store');
-Route::get('/sheets/{id}','SheetsController@show')->name('sheets.show');
 Route::get('/sheets/{id}/edit','SheetsController@edit')->name('sheets.edit');
 Route::post('/sheets/{id}/edit','SheetsController@update')->name('sheets.update');
 
