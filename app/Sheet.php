@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sheet extends Model
 {
+    protected $dates = [
+        'visit_date'
+    ];
+
     public function company()
     {
         return $this->belongsTo('App\Company');

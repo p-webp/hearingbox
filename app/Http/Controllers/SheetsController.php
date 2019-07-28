@@ -35,7 +35,7 @@ class SheetsController extends Controller
         $sheets = new Sheet;
         $sheets->title = $request->title;
         $sheets->visit_date = $request->visit_date;
-        $sheets->company_id = $request->company_id;
+        $sheets->company_id = $id;
         $sheets->save();
         return redirect()->route('companies.show',['id'=>$id]);
     }

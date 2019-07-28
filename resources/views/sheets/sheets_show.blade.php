@@ -5,7 +5,7 @@
         <br>
         <h2>{{$company->name}}</h2><br>
         <div class="q_a h3">タイトル：{{$sheets->title}}</a></div>
-        <div class="q_a h3">訪問日：{{$sheets->visit_date}}</a></div>
+        <div class="q_a h3">訪問日：{{$sheets->visit_date->format('Y年m月d日')}}</a></div>
         <a class="btn btn-primary btn-sm" href="/sheets/{{$sheets->id}}/edit" role="button">タイトル・訪問日の編集</a>
         <div class="q_a h3">Q&A</div>
          @foreach($items as $item)

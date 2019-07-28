@@ -8,12 +8,67 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <title>HearingBox</title>
         <style>
-            body{
+            body {
+                background-color: #f4f7f8;
                 font-size:16pt;
-                color:#000000;
-                padding-top:80px;
-                }
+                /*padding-top:80px;*/
+            }
 
+            .navbar {
+                margin: 2rem 0 2.5rem 0;
+            }
+
+            .my-navbar {
+                align-items: center;
+                background: #333;
+                display: flex;
+                height: 4rem;
+                justify-content: space-between;
+                padding: 0 2%;
+                margin-bottom: 2rem;
+            }
+
+            .my-navbar-brand {
+                font-size: 18px;
+            }
+
+            .my-navbar-brand,
+            .my-navbar-item {
+                color: #8c8c8c;
+            }
+            
+            .my-navbar-brand:hover,
+            a.my-navbar-item:hover {
+                color: #ffffff;
+            }
+
+            .table td:nth-child(n) {
+                white-space: nowrap;
+                width: 1px;
+            }
+
+            .form-control[disabled],
+            .form-control[readonly] {
+                background-color: #fff;
+            }
+
+            .list-group-item:hover {
+                color: #000000;
+                background-color: #e8ecef;
+            }
+
+            .list-group-item.active {
+                color:#000000;
+            }
+
+            .list-group-item {
+                color:#000000;
+            }
+            
+            .my-active {
+                color: #ffffff;
+                background-color: #4EC1E9;
+            }
             .h3{
                 font-size:20pt;
             }
@@ -31,8 +86,10 @@
         </style>
     </head>
     <body>
-        <nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
-            <a class='navbar-brand brand-text' href="{{route('companies.index')}}">HearingBox</a>
+    <header>
+        <!--!<nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>-->
+        <nav class="my-navbar">
+            <a class="my-navbar-brand" href="{{route('companies.index')}}">HearingBox</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
@@ -42,6 +99,7 @@
                  </ul>
             </div>
         </nav>
+    </header>
         <div class='container'>
             @yield('content')
         </div>

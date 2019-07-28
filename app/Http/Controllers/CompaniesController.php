@@ -22,9 +22,10 @@ class CompaniesController extends Controller
 
     public function show($id)
     {
+        $companies = Company::All();
         $company = Company::findOrFail($id);
         $sheets = $company->sheets()->get();
-        return view('companies.companies_show',['company' => $company, 'sheets' => $sheets, 'id'=>$id]);
+        return view('companies.companies_show',['companies'=>$companies, 'company'=>$company, 'sheets'=>$sheets, 'id'=>$id]);
     }
 
     public function create()
