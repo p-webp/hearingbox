@@ -19,6 +19,11 @@ class SheetItemController extends Controller
             'answer' => 'filled'
         ];
         $this->validate($request,$validate);
+        /*$sheetItems = new SheetItem;
+        $sheetItems->answer = $request->answer;
+        $sheetItems->sheet_id = $sheets_id;
+        $sheetItems->items_id = $items_id;
+        $sheetItems->save();*/
         $sheetItems = SheetItem::create([
             'answer'=>$request->answer,
             'sheet_id'=>$sheets_id,
