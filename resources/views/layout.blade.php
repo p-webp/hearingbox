@@ -36,7 +36,7 @@
             .my-navbar-item {
                 color: #8c8c8c;
             }
-            
+
             .my-navbar-brand:hover,
             a.my-navbar-item:hover {
                 color: #ffffff;
@@ -64,11 +64,22 @@
             .list-group-item {
                 color:#000000;
             }
-            
+
             .my-active {
                 color: #ffffff;
                 background-color: #4EC1E9;
             }
+
+            ul {
+                text-align: right;
+            }
+
+            li {
+                display: inline;
+                padding: 26px 10px 20px 10px;
+                color: #8c8c8c;
+            }
+
             .h3{
                 font-size:20pt;
             }
@@ -87,16 +98,13 @@
     </head>
     <body>
     <header>
-        <!--!<nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>-->
+        <!--<nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>-->
         <nav class="my-navbar">
             <a class="my-navbar-brand" href="{{route('companies.index')}}">HearingBox</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link inline" href="{{route('about.link')}}">about</a>
-                        <a class="nav-link inline" href="{{route('setting')}}">設定</a>
-                    </li>
-                 </ul>
+                <ul>
+                    <li><a href="{{route('about.link')}}">about</a></li>
+                    <li><a href="{{route('setting')}}">設定</a><li>
+                </ul>
             </div>
         </nav>
     </header>
