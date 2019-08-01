@@ -24,7 +24,7 @@ class SheetItemController extends Controller
             'sheet_id'=>$sheets_id,
             'item_id'=>$items_id
             ]);
-        return redirect()->route('sheets.show',['id'=>$sheets_id],302);
+        return redirect()->route('sheets.show',['id'=>$sheets_id]);
     }
 
     public function edit($id){
