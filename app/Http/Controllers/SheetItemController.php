@@ -14,17 +14,17 @@ class SheetItemController extends Controller
         ;
     }
 
-    public function store(Request $request,$sheets_id,$items_id){
+    public function store(Request $request){
         $validate=[
             'answer' => 'filled'
         ];
         $this->validate($request,$validate);
         $sheetItems = SheetItem::create([
             'answer'=>$request->answer,
-            'sheet_id'=>$sheets_id,
-            'item_id'=>$items_id
+            'sheet_id'=>$request->sheet_id,
+            'item_id'=>$request->item_id
             ]);
-        return redirect()->route('sheets.show',['id'=>$sheets_id]);
+        return redirect()->route('sheets.show',['id'=>$request->sheet_id]);
     }
 
     public function edit($id){

@@ -14,8 +14,10 @@
         {{ csrf_field() }}
     <div class="form-group">
         <p>回答の追加</p>
-            <p>{{$items->question}}</p>
-            <textarea class="form-control" name="answer" rows="3"></textarea>
+        <p>{{$items->question}}</p>
+        <textarea class="form-control" name="answer" rows="3"></textarea>
+        <input type="hidden" name="sheet_id" value="{{$sheets_id}}">
+        <input type="hidden" name="item_id" value="{{$items_id}}">
     </div>
     <input type="submit" class="btn btn-primary" name="create" value="追加">
     </form>
