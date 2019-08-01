@@ -19,17 +19,12 @@ class SheetItemController extends Controller
             'answer' => 'filled'
         ];
         $this->validate($request,$validate);
-        /*$sheetItems = new SheetItem;
-        $sheetItems->answer = $request->answer;
-        $sheetItems->sheet_id = $sheets_id;
-        $sheetItems->items_id = $items_id;
-        $sheetItems->save();*/
         $sheetItems = SheetItem::create([
             'answer'=>$request->answer,
             'sheet_id'=>$sheets_id,
             'item_id'=>$items_id
             ]);
-        return redirect()->route('sheets.show',['id'=>$sheets_id]);
+        return redirect()->route('sheets.show',['id'=>$sheets_id],302);
     }
 
     public function edit($id){
