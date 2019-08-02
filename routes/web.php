@@ -41,7 +41,7 @@ Route::get('/sheets/{id}/edit','SheetsController@edit')->name('sheets.edit');
 Route::post('/sheets/{id}/edit','SheetsController@update')->name('sheets.update');
 
 Route::get('/sheets/{sheets_id}/question/{items_id}/answer/create/','SheetItemController@create')->name('answer.create');
-Route::post('/sheets/{sheets_id}/quesiton/{items_id}/answer/create/','SheetItemController@store')->name('answer.store');
+Route::post('/sheets/{sheets_id}/question/{items_id}/answer/create/','SheetItemController@store')->name('answer.store');
 Route::get('/answer/{id}/edit','SheetItemController@edit')->name('answer.edit');
 Route::post('/answer/{id}/edit','SheetItemController@update')->name('answer.update');
 
