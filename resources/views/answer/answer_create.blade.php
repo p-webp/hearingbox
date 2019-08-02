@@ -10,7 +10,7 @@
         </ul>
     </div>
     @endif
-    <form action="/sheets/{{$sheets_id}}/question/{{$items_id}}/answer/create/" method="POST">
+    <form action="/sheets/{{$sheets_id}}/question/{{$items_id}}/answer/create" method="POST">
         {{ csrf_field() }}
     <div class="form-group">
         <p>回答の追加</p>
