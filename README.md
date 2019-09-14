@@ -14,8 +14,6 @@ Laravelの勉強のために作成したオリジナルアプリケーション�
 デモサイト
 http://hearingbox.herokuapp.com/companies
 
-<img width="1142" alt="スクリーンショット 2019-09-14 11 08 33" src="https://user-images.githubusercontent.com/48795394/64905278-bf461300-d710-11e9-9bb2-e4c31c6ecf58.png">
-
 ![demo_HearingBox](https://user-images.githubusercontent.com/48795394/64905275-b3f2e780-d710-11e9-900a-85cc98de2112.gif)
 
 ## 機能
